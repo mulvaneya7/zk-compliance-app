@@ -57,3 +57,85 @@ These components are part of the planned system architecture and will be introdu
 ```bash
 docker build -t zk-compliance-app .
 docker run --rm -p 5173:5173 zk-compliance-app
+
+Open in your browser:
+
+http://localhost:5173
+
+---
+
+### Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## System Architecture (Planned)
+
+The full system architecture will integrate:
+
+- Zero-Knowledge Proofs (ZKPs) for compliance verification  
+- Confidential Computing (AWS Nitro / Azure confidential VMs)  
+- Permissioned Distributed Ledger (Hyperledger Fabric)  
+
+These components enable:
+
+- Verification without disclosure  
+- Secure execution of sensitive computations  
+- Tamper-resistant audit trails  
+
+---
+
+## Research Objective
+
+To evaluate whether modern cryptographic and cloud-based techniques can:
+
+- Reduce reliance on data-sharing in compliance workflows  
+- Improve privacy guarantees in M&A due diligence  
+- Maintain verifiability under regulatory constraints  
+
+---
+
+## Demonstrated Use Case
+
+Verification of the regulatory condition:
+
+Fewer than 5% of customer accounts are associated with politically exposed persons (PEPs)
+
+This condition is evaluated without exposing individual customer records.
+
+---
+
+## Roadmap
+
+v0.2
+- Implement real ZK proof circuit (Circom / SnarkJS)
+
+v0.3
+- Add proof verification layer  
+- Replace simulated proof artifacts  
+
+v0.4
+- Introduce confidential execution environments  
+
+v0.5
+- Integrate distributed ledger (Hyperledger Fabric)  
+
+v1.0
+- Full end-to-end privacy-preserving compliance system  
+
+---
+
+## Author
+
+Alex Mulvaney  
+California State University, Fullerton  
+
+---
+
+## License
+
+This project is for academic and research purposes.
