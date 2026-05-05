@@ -55,5 +55,5 @@ These components are part of the planned system architecture and will be introdu
 ### Option 1: Docker (Recommended)
 
 ```bash
-docker build -t zk-compliance-v01 .
-docker run --rm -p 5173:5173 zk-compliance-v01
+docker build -t zk-compliance-app .
+docker run --rm -p 5173:5173 zk-compliance-app
