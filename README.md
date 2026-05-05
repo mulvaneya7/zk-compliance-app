@@ -1,16 +1,59 @@
-# React + Vite
+# Trustless Due Diligence  
+## Zero-Knowledge Proof Compliance for Mergers & Acquisitions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a prototype implementation of a privacy-preserving compliance verification system designed for merger and acquisition (M&A) due diligence.
 
-Currently, two official plugins are available:
+The system demonstrates how regulatory assertions can be verified **without exposing underlying customer data**, using a cryptographic proof-based approach.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Project Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Traditional due diligence workflows require organizations to disclose sensitive customer and financial data to external parties. This introduces:
 
-## Expanding the ESLint configuration
+- Extended transaction timelines  
+- Increased legal and audit costs  
+- Significant data privacy risks  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project reframes compliance verification as a **proof problem rather than a data-sharing problem**.
+
+---
+
+## ⚙️ v0.1 Prototype (Current)
+
+This version provides a **lightweight, containerized demonstration** of the core concept.
+
+### Features
+
+- Synthetic customer dataset generation  
+- PEP (Politically Exposed Person) exposure calculation  
+- Threshold-based compliance verification (`< 5%`)  
+- Simulated proof generation (hash-based placeholder)  
+- Mock ledger anchoring (stand-in for blockchain integration)  
+- Auditor-facing verification output  
+
+### Key Concept Demonstrated
+
+> A compliance condition can be verified using **derived proof artifacts**, without revealing raw records.
+
+---
+
+## 🚫 Limitations (v0.1)
+
+This prototype intentionally uses simplified stand-ins:
+
+- ❌ No real zero-knowledge proof system (Circom/SnarkJS planned)  
+- ❌ No confidential computing (simulated execution boundary)  
+- ❌ No distributed ledger (mock ledger reference only)  
+
+These components are part of the planned system architecture and will be introduced in future versions.
+
+---
+
+## 🧪 Run the Demo
+
+### Option 1: Docker (Recommended)
+
+```bash
+docker build -t zk-compliance-v01 .
+docker run --rm -p 5173:5173 zk-compliance-v01
