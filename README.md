@@ -49,6 +49,38 @@ This prototype intentionally uses simplified stand-ins:
 These components are part of the planned system architecture and will be introduced in future versions.
 
 ---
+## Architecture Overview
+
+flowchart LR
+
+    A[Organization Internal Data\n(Customer Records)] --> B[Confidential Execution Environment\n(Simulated in v0.1)]
+
+    B --> C[Compliance Logic\nPEP < 5% Threshold Check]
+
+    C --> D[Proof Generation\n(ZK Proof - Simulated v0.1)]
+
+    D --> E[Proof Artifact\n(Hash + Public Claim)]
+
+    E --> F[Ledger Anchor\n(Mock Ledger v0.1)]
+
+    E --> G[Auditor / Verifier]
+
+    G --> H[Verification Result\n(Valid / Invalid)]
+
+    subgraph Private Boundary
+        A
+        B
+        C
+    end
+
+    subgraph Public / Shared
+        D
+        E
+        F
+        G
+        H
+    end
+---
 
 ## 🧪 Run the Demo
 
