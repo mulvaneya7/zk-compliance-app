@@ -49,22 +49,18 @@ This prototype intentionally uses simplified stand-ins:
 These components are part of the planned system architecture and will be introduced in future versions.
 
 ---
+
 ## Architecture Overview
 
+```mermaid
 flowchart LR
 
     A[Organization Internal Data\n(Customer Records)] --> B[Confidential Execution Environment\n(Simulated in v0.1)]
-
     B --> C[Compliance Logic\nPEP < 5% Threshold Check]
-
     C --> D[Proof Generation\n(ZK Proof - Simulated v0.1)]
-
     D --> E[Proof Artifact\n(Hash + Public Claim)]
-
     E --> F[Ledger Anchor\n(Mock Ledger v0.1)]
-
     E --> G[Auditor / Verifier]
-
     G --> H[Verification Result\n(Valid / Invalid)]
 
     subgraph Private Boundary
@@ -80,21 +76,23 @@ flowchart LR
         G
         H
     end
+```
 ---
 
 ## 🧪 Run the Demo
 
-### Option 1: Docker (Recommended)
+### Docker
 
 ```bash
 docker build -t zk-compliance-app .
 docker run --rm -p 5173:5173 zk-compliance-app
+```
 
 Open in your browser:
 
+```text
 http://localhost:5173
-
----
+```
 
 ### Local Development
 
