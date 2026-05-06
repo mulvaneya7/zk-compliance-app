@@ -54,22 +54,21 @@ These components are part of the planned system architecture and will be introdu
 
 ```mermaid
 flowchart LR
+    A["Organization Internal Data<br/>(Customer Records)"] --> B["Confidential Execution Environment<br/>(Simulated in v0.1)"]
+    B --> C["Compliance Logic<br/>PEP less than 5% Threshold Check"]
+    C --> D["Proof Generation<br/>(ZK Proof - Simulated v0.1)"]
+    D --> E["Proof Artifact<br/>(Hash + Public Claim)"]
+    E --> F["Ledger Anchor<br/>(Mock Ledger v0.1)"]
+    E --> G["Auditor / Verifier"]
+    G --> H["Verification Result<br/>(Valid / Invalid)"]
 
-    A[Organization Internal Data\n(Customer Records)] --> B[Confidential Execution Environment\n(Simulated in v0.1)]
-    B --> C[Compliance Logic\nPEP < 5% Threshold Check]
-    C --> D[Proof Generation\n(ZK Proof - Simulated v0.1)]
-    D --> E[Proof Artifact\n(Hash + Public Claim)]
-    E --> F[Ledger Anchor\n(Mock Ledger v0.1)]
-    E --> G[Auditor / Verifier]
-    G --> H[Verification Result\n(Valid / Invalid)]
-
-    subgraph Private Boundary
+    subgraph Private_Boundary["Private Boundary"]
         A
         B
         C
     end
 
-    subgraph Public / Shared
+    subgraph Public_Shared["Public / Shared"]
         D
         E
         F
